@@ -3,13 +3,17 @@
 #   app:
 #     master: omnifilter-client
 #   skip_cleanup: true
-language: node_js
-node_js:
-- 4.2.3
+sudo: required
+dist: trusty
+addons:
+  firefox: "latest"
 before_install:
     # Start a display server where all graphical operations happens in memory
     - export DISPLAY=:99.0
     - sh -e /etc/init.d/xvfb start
+language: node_js
+node_js:
+- 4.2.3
 before_script:
 - gulp
 script:
