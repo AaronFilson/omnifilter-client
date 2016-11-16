@@ -3,6 +3,12 @@
 #   app:
 #     master: omnifilter-client
 #   skip_cleanup: true
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 language: node_js
 node_js:
 - 4.2.3
