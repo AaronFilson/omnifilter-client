@@ -3,6 +3,7 @@
 #   app:
 #     master: omnifilter-client
 #   skip_cleanup: true
+sudo: required
 addons:
   apt:
     sources:
