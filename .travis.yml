@@ -1,16 +1,17 @@
-# deploy:
-#   provider: heroku
-#   app:
-#     master: omnifilter-client
-#   skip_cleanup: true
+deploy:
+  provider: heroku
+  app:
+    master: omnifilter-client
+  skip_cleanup: true
+  api_key:
+    secure: 0DkSgnYv3xvgXiPVZqpqJXYUGZ9KNtvpvJ8V2O3YrxvAyfUj57KSoG4bAYG+pVImuaJaSCYm+mtH2jhmsjyEkRuNSuoAuHJLMCBYYUy7sGnwqoh56sYv0ObO0CyvkhVRlh2PLc9tEu/LEaZf25OnZVMpHSI7wikWrbOhHhxKO18pnGPuBeKA1zbSt8nx59jEoSFjSorOdd6hI5y1L0GSSeiLQwnqfRKRLeBZUfuJuuoYFCe0xoee2+7VEbkstNEgC5BMuW+lUnTrw3a7k1+4QUvbH7sR378JLRrcaSH+Ck/+wlXzv2FcIr8KTqqddNUFJK5xBYE0VvYTi/yaeggitoHpR4CR8fV35ba/ygfSf7n02exHXb6++RgvkEoAv9Uhl7VTXZXlo2U5bzJxCLd9+QC/Djo5lzEHk3C/c5zYU2AZGAy5ZfwAb9lowmpgNkD+3i4hcE/HryWFddOArushBdMA7EAlAmb/KV380UiQ3Vx8xR6hbIxv/O0T1ecnIF4Bt84b/df8LxADhTZCimVRy0LUZNBvhtCPyMaSGtpsJp+HAD7LVERW1UmmXDuENA+Rn0euSMOUVfkMgmyRfh9R/IpyiYXV0jrYywgWGlaYWJ89MjgsE0YhOyw5f6fPkw25HI0NNXVX+xZtrYe3hAst95Uj6X7efSa6Ty8u4DnbEmo=
 sudo: required
 dist: trusty
 addons:
-  firefox: "latest"
+  firefox: latest
 before_install:
-    # Start a display server where all graphical operations happens in memory
-    - export DISPLAY=:99.0
-    - sh -e /etc/init.d/xvfb start
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 language: node_js
 node_js:
 - 4.2.3
