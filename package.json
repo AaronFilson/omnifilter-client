@@ -1,0 +1,60 @@
+{
+  "name": "omnifilter-client",
+  "version": "0.0.2",
+  "description": "\"Awesome filters applied to personal images [client]\"",
+  "main": "gulpfile.js",
+  "directories": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AaronFilson/omnifilter-client"
+  },
+  "author": "Aaron Filson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ocgears/omnifilter/issues"
+  },
+  "homepage": "https://github.com/ocgears/omnifilter#readme",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-route": "^1.5.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "express": "^4.13.4",
+    "webpack": "^1.13.3"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.0",
+    "babel": "^6.5.2",
+    "babel-core": "^6.6.5",
+    "gulp": "^3.9.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-protractor": "^3.0.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "html-loader": "^0.4.3",
+    "jasmine-core": "^2.5.2",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.0.2",
+    "protractor": "^4.0.11",
+    "webpack": "^1.12.14",
+    "webpack-stream": "^3.2.0"
+  },
+  "scripts": {
+    "test": "./karma start",
+    "start": "node clientserver"
+  },
+  "keywords": [
+    "client",
+    "image-filter",
+    "parallel-programming",
+    "super-fast-filter",
+    "omni",
+    "filter",
+    "filters"
+  ],
+  "engines": {
+    "node": "4.2.3"
+  }
+}
