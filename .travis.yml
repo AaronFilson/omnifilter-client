@@ -1,0 +1,16 @@
+# deploy:
+#   provider: heroku
+#   app:
+#     master: omnifilter-client
+#   skip_cleanup: true
+language: node_js
+node_js:
+- 4.2.3
+services:
+- mongodb
+before_script:
+- npm install -g gulp
+- gulp
+script:
+- npm test
+- npm start
