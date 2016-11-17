@@ -1,3 +1,5 @@
+var serverUrl = process.env.OMNIFILTERSERVERURL || 'http://localhost:3000'; // testing placeholder while I find where to host server.
+
 var handleSuccess = function(callback) {
   return function(res) {
     callback(null, res.data);
@@ -19,7 +21,7 @@ module.exports = exports = function(app) {
     Resource.prototype.getAll = function(callback) {
       $http({
         method: 'GET',
-        url: 'http://localhost:3000' + this.resourceName + 'getAll',
+        url: serverUrl + this.resourceName + 'getAll',
         headers: {
           token: userAuth.getToken()
         }
@@ -30,7 +32,7 @@ module.exports = exports = function(app) {
     Resource.prototype.create = function(data, callback) {
       $http({
         method: 'POST',
-        url: 'http://localhost:3000' + this.resourceName + 'newcontent',
+        url: serverUrl + this.resourceName + 'newcontent',
         data: data,
         headers: {
           token: userAuth.getToken()
@@ -42,7 +44,7 @@ module.exports = exports = function(app) {
     Resource.prototype.update = function(data, callback) {
       $http({
         method: 'PUT',
-        url: 'http://localhost:3000' + this.resourceName + '/' + data._id,
+        url: serverUrl + this.resourceName + '/' + data._id,
         data: data,
         headers: {
           token: userAuth.getToken()
@@ -54,7 +56,7 @@ module.exports = exports = function(app) {
     Resource.prototype.delete = function(data, callback) {
       $http({
         method: 'DELETE',
-        url: 'http://localhost:3000' + this.resourceName + 'delete/' + data._id,
+        url: serverUrl + this.resourceName + 'delete/' + data._id,
         headers: {
           token: userAuth.getToken()
         }
@@ -65,7 +67,7 @@ module.exports = exports = function(app) {
     Resource.prototype.verify = function(callback) {
       $http({
         method: 'GET',
-        url: 'http://localhost:3000/verify',
+        url: serverUrl + '/verify',
         headers: {
           token: $window.localStorage.token
         }

@@ -1,3 +1,4 @@
+var myServerUrl = process.env.OMNIFILTERSERVERURL || 'http://localhost:3000';
 var angular = require('angular');
 
 describe('Sign up controller basic', () => {
@@ -49,7 +50,7 @@ describe('Sign up controller basic', () => {
       };
 
       $scope.email = 'startValue';
-      $httpBackend.expectPOST('http://localhost:3000/signup')
+      $httpBackend.expectPOST(myServerUrl + '/signup')
       .respond(200, { token: 'wasHere', email: 'Lester' });
       $scope.submit(user);
       $httpBackend.flush();

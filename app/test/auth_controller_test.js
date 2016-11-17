@@ -1,3 +1,4 @@
+var myServerUrl = process.env.OMNIFILTERSERVERURL || 'http://localhost:3000';
 var angular = require('angular');
 
 describe('auth controller basic', () => {
@@ -31,7 +32,7 @@ describe('auth controller basic', () => {
 
     it('should call to verify path', () => {
       $scope.email = null;
-      $httpBackend.expectGET('http://localhost:3000/verify')
+      $httpBackend.expectGET(myServerUrl + '/verify')
       .respond(200, { email: 'tester' });
       $scope.updateEmail();
       $httpBackend.flush();

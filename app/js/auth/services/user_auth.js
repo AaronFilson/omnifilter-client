@@ -1,3 +1,4 @@
+var myServerUrl = process.env.OMNIFILTERSERVERURL || 'http://localhost:3000';
 module.exports = function(app) {
   app.factory('userAuth', ['$http', '$window', function($http, $window) {
     var token;
@@ -5,7 +6,7 @@ module.exports = function(app) {
     var auth = {
       createUser: function(user, cb) {
         cb = cb || function() {};
-        $http.post('http://localhost:3000/signup', user)
+        $http.post(myServerUrl + '/signup', user)
           .then(function(res) {
             token = $window.localStorage.token = res.data.token;
             cb(null);
@@ -18,7 +19,7 @@ module.exports = function(app) {
         cb = cb || function() {};
         $http({
           method: 'GET',
-          url: 'http://localhost:3000/signin',
+          url: myServerUrl + '/signin',
           headers: {
             'Authorization': 'Basic ' + btoa(user.email + ':' + user.password)
           }
@@ -45,7 +46,7 @@ module.exports = function(app) {
         cb = cb || function() {};
         $http({
           method: 'GET',
-          url: 'http://localhost:3000/verify',
+          url: myServerUrl + '/verify',
           headers: {
             token: auth.getToken()
           }
